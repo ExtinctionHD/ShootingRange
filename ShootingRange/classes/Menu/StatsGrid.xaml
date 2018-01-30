@@ -1,0 +1,268 @@
+﻿<UserControl x:Name="controlStatsGrid" 
+             x:Class="ShootingRange.classes.Menu.StatsGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShootingRange.classes.Menu"
+             mc:Ignorable="d"
+             FontFamily="./Art/#FuturaBookC">
+    <Grid>
+
+
+        <Grid Margin="0"
+              Background="#7F000000">
+
+            <Label Content="СТАТИСТИКА"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Foreground="White"
+                   FontSize="72"
+                   FontWeight="Bold"
+                   Margin="50"
+                   FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+            <Grid Grid.Row="1"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="320"/>
+                    <ColumnDefinition Width="320"/>
+                    <ColumnDefinition Width="320"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Rectangle Grid.Column="0"
+                           VerticalAlignment="Top"
+                           Height="1"
+                           Fill="White"/>
+                <Rectangle Grid.Column="1"
+                           VerticalAlignment="Top"
+                           Height="1"
+                           Fill="White"/>
+                <Rectangle Grid.Column="2"
+                           VerticalAlignment="Top"
+                           Height="1"
+                           Fill="White"/>
+
+                <Rectangle Grid.Column="0"
+                           Grid.Row="1"
+                           VerticalAlignment="Bottom"
+                           Height="1"
+                           Fill="White"/>
+                <Rectangle Grid.Column="1"
+                           Grid.Row="1"
+                           VerticalAlignment="Bottom"
+                           Height="1"
+                           Fill="White"/>
+                <Rectangle Grid.Column="2"
+                           Grid.Row="1"
+                           VerticalAlignment="Bottom"
+                           Height="1"
+                           Fill="White"/>
+
+                <Grid Grid.Column="0"
+                      Grid.Row="0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="УБИЙСТВ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                    <Label Content="{Binding Kills, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="0"
+                      Grid.Row="1"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="В ГОЛОВУ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                    <Label Content="{Binding Headshots, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="1"
+                      Grid.Row="0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="ТОЧНОСТЬ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                    <Label Content="{Binding Accuracy, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="1"
+                      Grid.Row="1"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="УВС"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                    <Label Content="{Binding KPS, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="2"
+                      Grid.Row="0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="ВРЕМЯ ИГРЫ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                    <Label Content="{Binding PlayTime, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="2"
+                      Grid.Row="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="БОНУСНОЕ ВРЕМЯ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                    <Label Content="{Binding BonusTime, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlStatsGrid}"/>
+
+                </Grid>
+
+            </Grid>
+
+            <Rectangle VerticalAlignment="Bottom"
+                       Height="1"
+                       Fill="White"
+                       Margin="0, 50"/>
+
+            <Button x:Name="btnReturn"
+                    Content="НАЗАД"
+                    Style="{StaticResource ChooseButtons}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    FontSize="24"
+                    Width="120"
+                    Margin="100, 50.5"
+                    Click="btnReturn_Click"/>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

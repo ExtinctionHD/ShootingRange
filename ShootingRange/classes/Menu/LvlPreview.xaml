@@ -1,0 +1,73 @@
+﻿<UserControl x:Name="controlLvlPreview"
+             x:Class="ShootingRange.classes.Menu.LvlPreview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShootingRange.classes.Menu"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1000"
+             MouseEnter="UserControl_MouseEnter"
+             MouseLeave="controlLvlPreview_MouseLeave">
+
+    <Grid ClipToBounds="True">
+        
+        <Rectangle Fill="#7FFFFFFF"/>
+        
+        <Image x:Name="imgLvl"
+               Stretch="UniformToFill"
+               Margin="2"/>
+
+        <Rectangle x:Name="rctDark"
+                   Fill="#4C000000"
+                   Margin="2"
+                   Opacity="0"/>
+
+        <Grid HorizontalAlignment="Center"
+              VerticalAlignment="Center"
+              Margin="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lblTitle"
+                   Content="СНЕЖНЫЕ ГОРЫ"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="White"
+                   FontSize="48"
+                   FontWeight="Bold"
+                   FontFamily="./Art/#FuturaBookC"
+                   Opacity="0"/>
+
+            <Label x:Name="lblRecord"
+                   Grid.Row="1"
+                   Content="Рекорд: 26800"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="White"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   FontFamily="./Art/#FuturaBookC"
+                   Opacity="0"/>
+
+            <Button x:Name="btnStart"
+                    Grid.Row="2"
+                    Style="{StaticResource ChooseButtons}"
+                    Content="НАЧАТЬ"
+                    Grid.Column="0"
+                    FontSize="24"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="10"
+                    Width="120"
+                    Height="Auto"
+                    Opacity="0"
+                    Click="lvlPreview_Click"/>
+        </Grid>
+
+    </Grid>
+</UserControl>

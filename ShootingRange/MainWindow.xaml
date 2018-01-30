@@ -1,0 +1,87 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShootingRange"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:Menu="clr-namespace:ShootingRange.classes.Menu" x:Name="windowMain"
+        x:Class="ShootingRange.MainWindow"
+        mc:Ignorable="d" 
+        Height="864"
+        Width="1536"
+        WindowState="Maximized"
+        WindowStyle="None" 
+        ResizeMode="NoResize"
+        KeyDown="Window_KeyDown"
+        Loaded="Window_Loaded"
+        FontFamily="./classes/Menu/Art/#FuturaBookC">
+
+    <Grid x:Name="grMain"
+          Margin="0">
+
+        <Grid x:Name="grGame"
+              Margin="0"
+              MouseMove="grGame_MouseMove"
+              MouseRightButtonDown="grGame_MouseRightButtonDown"
+              MouseRightButtonUp="grGame_MouseRightButtonUp"
+              MouseLeftButtonDown="grGame_MouseLeftButtonDown"
+              IsVisibleChanged="grGame_IsVisibleChanged">
+
+            <Canvas Margin="0"
+                    Cursor="None"
+                    Panel.ZIndex="1">
+
+                <Image x:Name="imgCharacterModel"
+                       Visibility="Hidden"
+                       Canvas.Left="0"
+                       Canvas.Bottom="0"
+                       gif:ImageBehavior.RepeatBehavior="1x"
+                       gif:ImageBehavior.AnimationCompleted="imgCharacterModel_AnimationCompleted"/>
+
+            </Canvas>
+
+        </Grid>
+
+        <Menu:PauseMenuGrid x:Name="grPauseMenu"
+                            BtnResumeClick="btnPauseResume_Click"
+                            BtnRestartClick="btnPauseRestart_Click"
+                            BtnMainMenuClick="btnPauseMainMenu_Click"/>
+
+        <Menu:ChoiceDialog x:Name="dlgDefeat"
+                           Title="ПОРАЖЕНИЕ"
+                           SubTitle="Начать заново?"
+                           Left="ДА"
+                           Right="НЕТ"
+                           ButtonsWidth="120"
+                           Background="#7F000000"
+                           LeftButtonClick="dlg_StartGame"
+                           RightButtonClick="dlg_Continue"/>
+
+        <Menu:ChoiceDialog x:Name="dlgVictory"
+                           Title="ПРОЙДЕНО"
+                           SubTitle="Результат: 13 000"
+                           Left="ПРОДОЛЖИТЬ"
+                           Right="СТАТИСТИКА"
+                           ButtonsWidth="220"
+                           Background="#7F000000"
+                           LeftButtonClick="dlg_Continue"
+                           RightButtonClick="dlgVictory_ShowStats"/>
+
+        <Menu:StatsGrid x:Name="grStats"
+                        ReturnButtonClick="grStats_btnReturnClick"/>
+
+        <Menu:MainMenuGrid x:Name="grMainMenu"
+                           LvlPreviewClick="dlg_StartGame"/>
+
+        <Grid x:Name="grLoadScreen"
+              Cursor="None">
+
+            <Image x:Name="img"
+                   Source="splashScreen.png"/>
+
+        </Grid>
+
+
+    </Grid>
+
+</Window>

@@ -1,0 +1,20 @@
+﻿ShootingRange
+
+
+winexe
+C#
+.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\
+ShootingRange
+none
+false
+DEBUG;TRACE
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\App.xaml
+10-851011609
+
+23-817777731
+141062160301
+classes\Interface\BulletsCounter.xaml;classes\Interface\InterfaceElContainer.xaml;classes\Interface\KillsCounter.xaml;classes\Interface\Timer.xaml;classes\Menu\ChoiceDialog.xaml;classes\Menu\LvlPreview.xaml;classes\Menu\MainMenuGrid.xaml;classes\Menu\PauseMenuGrid.xaml;classes\Menu\StatsGrid.xaml;MainWindow.xaml;
+splashscreen.png
+False
+

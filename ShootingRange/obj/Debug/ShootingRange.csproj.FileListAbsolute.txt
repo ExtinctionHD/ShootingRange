@@ -1,0 +1,50 @@
+D:\Education\ShootingRange\ShootingRange\obj\Debug\MainWindow.g.cs
+D:\Education\ShootingRange\ShootingRange\obj\Debug\App.g.cs
+D:\Education\ShootingRange\ShootingRange\obj\Debug\ShootingRange_MarkupCompile.cache
+D:\Education\ShootingRange\ShootingRange\obj\Debug\ShootingRange_MarkupCompile.lref
+D:\Education\ShootingRange\ShootingRange\bin\Debug\ShootingRange.exe
+D:\Education\ShootingRange\ShootingRange\bin\Debug\ShootingRange.pdb
+D:\Education\ShootingRange\ShootingRange\bin\Debug\WpfAnimatedGif.dll
+D:\Education\ShootingRange\ShootingRange\bin\Debug\WpfAnimatedGif.xml
+D:\Education\ShootingRange\ShootingRange\obj\Debug\MainWindow.baml
+D:\Education\ShootingRange\ShootingRange\obj\Debug\ShootingRange.g.resources
+D:\Education\ShootingRange\ShootingRange\obj\Debug\ShootingRange.Properties.Resources.resources
+D:\Education\ShootingRange\ShootingRange\obj\Debug\ShootingRange.csproj.GenerateResource.Cache
+D:\Education\ShootingRange\ShootingRange\obj\Debug\ShootingRange.csproj.CoreCompileInputs.cache
+D:\Education\ShootingRange\ShootingRange\obj\Debug\ShootingRange.exe
+D:\Education\ShootingRange\ShootingRange\obj\Debug\ShootingRange.pdb
+D:\Education\ShootingRange\ShootingRange\obj\Debug\ShootingRange.csprojResolveAssemblyReference.cache
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\bin\Debug\ShootingRange.exe
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\bin\Debug\ShootingRange.pdb
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\MainWindow.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\App.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\ShootingRange_MarkupCompile.cache
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\ShootingRange_MarkupCompile.lref
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\MainWindow.baml
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\ShootingRange.g.resources
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\ShootingRange.Properties.Resources.resources
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\ShootingRange.csproj.GenerateResource.Cache
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\ShootingRange.csproj.CoreCompileInputs.cache
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\ShootingRange.exe
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\ShootingRange.pdb
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Interface\BulletsCounter.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Interface\BulletsCounter.baml
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Interface\Timer.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Interface\Timer.baml
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Interface\KillsCounter.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Interface\KillsCounter.baml
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Interface\InterfaceElContainer.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Interface\InterfaceElContainer.baml
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\App.baml
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\ShootingRange.csprojResolveAssemblyReference.cache
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Menu\StatsGrid.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Menu\StatsGrid.baml
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Menu\LvlPreview.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Menu\LvlPreview.baml
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Menu\MainMenuGrid.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Menu\MainMenuGrid.baml
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Menu\ChoiceDialog.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Menu\ChoiceDialog.baml
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Menu\PauseMenuGrid.g.cs
+D:\Education\БГУИР ЯП 2 курс\CourseProject\ShootingRange\ShootingRange\obj\Debug\classes\Menu\PauseMenuGrid.baml

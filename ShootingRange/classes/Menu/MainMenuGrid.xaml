@@ -1,0 +1,545 @@
+﻿<UserControl x:Name="controlMainMenu"
+             x:Class="ShootingRange.classes.Menu.MainMenuGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShootingRange.classes.Menu"
+             mc:Ignorable="d" 
+             d:DesignHeight="864" d:DesignWidth="1536"
+             FontFamily="./Art/#FuturaBookC"
+             IsVisibleChanged="controlMainMenu_IsVisibleChanged">
+    <UserControl.Background>
+        <ImageBrush ImageSource="Art/menuBg.jpg" Stretch="UniformToFill"/>
+    </UserControl.Background>
+    <Grid>
+
+        <Grid Margin="0" Background="#7F000000">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Rectangle VerticalAlignment="Bottom"
+                       Height="2.5"
+                       Margin="0, 50"
+                       Fill="White"
+                       Opacity="0.3"/>
+
+            <Grid HorizontalAlignment="Left"
+                  VerticalAlignment="Center"
+                  Margin="100, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <RadioButton x:Name="btnLvlChoose"
+                             Content="ВЫБОР КАРТЫ"
+                             Style="{StaticResource ResourceKey=MenuButtons}"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             FontSize="36"
+                             Margin="0, 50"
+                             IsChecked="True"/>
+
+                <RadioButton x:Name="btnStats"
+                             Content="СТАТИСТИКА"
+                             Grid.Column="1"
+                             Style="{StaticResource ResourceKey=MenuButtons}"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             FontSize="36"
+                             Margin="0, 50"/>
+
+                <RadioButton x:Name="btnControl"
+                             Content="УПРАВЛЕНИЕ"
+                             Grid.Column="2"
+                             Style="{StaticResource ResourceKey=MenuButtons}"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             FontSize="36"
+                             Margin="0, 50"/>
+            </Grid>
+
+            <Grid Grid.Row="1" 
+                  Margin="100, 0, 100, 50"
+                  Visibility="{Binding ElementName=btnLvlChoose, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Style="{StaticResource ButtonNext}"
+                        Grid.Column="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Height="80"
+                        Click="btnNext_Click"/>
+
+                <Button Style="{StaticResource ButtonPrev}"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Height="80"
+                        Click="btnPrev_Click"/>
+
+                <local:LvlPreview x:Name="lvlPreview"
+                                  Grid.Column="1"
+                                  Margin="50"
+                                  LvlPreviewClick="lvlPreview_Click"/>
+
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                  Margin="0, 0, 0, 50"
+                  Visibility="{Binding ElementName=btnStats, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="320"/>
+                    <ColumnDefinition Width="320"/>
+                    <ColumnDefinition Width="320"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Rectangle Grid.Column="0"
+                           VerticalAlignment="Top"
+                           Height="1"
+                           Fill="White"/>
+                <Rectangle Grid.Column="1"
+                           VerticalAlignment="Top"
+                           Height="1"
+                           Fill="White"/>
+                <Rectangle Grid.Column="2"
+                           VerticalAlignment="Top"
+                           Height="1"
+                           Fill="White"/>
+
+                <Rectangle Grid.Column="0"
+                           Grid.Row="2"
+                           VerticalAlignment="Bottom"
+                           Height="1"
+                           Fill="White"/>
+                <Rectangle Grid.Column="1"
+                           Grid.Row="2"
+                           VerticalAlignment="Bottom"
+                           Height="1"
+                           Fill="White"/>
+                <Rectangle Grid.Column="2"
+                           Grid.Row="2"
+                           VerticalAlignment="Bottom"
+                           Height="1"
+                           Fill="White"/>
+
+                <Grid Grid.Column="0"
+                      Grid.Row="0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="ВЫСТРЕЛОВ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                    <Label Content="{Binding Shoots, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="0"
+                      Grid.Row="1"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="УБИЙСТВ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                    <Label Content="{Binding Kills, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="0"
+                      Grid.Row="2"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="В ГОЛОВУ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                    <Label Content="{Binding Headshots, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="1"
+                      Grid.Row="0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="ВРЕМЯ ИГРЫ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                    <Label Content="{Binding PlayTime, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="1"
+                      Grid.Row="1"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="ТОЧНОСТЬ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                    <Label Content="{Binding Accuracy, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="1"
+                      Grid.Row="2"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="УВС"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                    <Label Content="{Binding KPS, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="2"
+                      Grid.Row="0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="ПОБЕД"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                    <Label Content="{Binding Winrate, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="2"
+                      Grid.Row="1"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="ВСЕГО ИГР"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                    <Label Content="{Binding Games, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                </Grid>
+
+                <Grid Grid.Column="2"
+                      Grid.Row="2"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="60,30,0,30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="ВСЕГО ОЧКОВ"
+                           Grid.Row="0"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="24"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                    <Label Content="{Binding Score, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                           Grid.Row="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="48"
+                           FontWeight="Bold"
+                           FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="1" 
+                  Margin="0, 0, 0, 50"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Visibility="{Binding ElementName=btnControl, Path=IsChecked, Converter={StaticResource BoolToVis}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Rectangle VerticalAlignment="Top"
+                           Height="1"
+                           Fill="White"/>
+
+                <Rectangle Grid.Row="4"
+                           VerticalAlignment="Bottom"
+                           Height="1"
+                           Fill="White"/>
+
+                <Label Content="ЛКМ"
+                       Grid.Row="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="60, 15"
+                       Foreground="White"
+                       FontSize="48"
+                       FontWeight="Bold"
+                       FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+                <Label Content="Стрельба"
+                       Grid.Row="0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="300, 15, 60, 15"
+                       Foreground="White"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                <Label Content="ПКМ"
+                       Grid.Row="1"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="60, 15"
+                       Foreground="White"
+                       FontSize="48"
+                       FontWeight="Bold"
+                       FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+                <Label Content="Прицеливание удержанием"
+                       Grid.Row="1"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="300, 15, 60, 15"
+                       Foreground="White"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                <Label Content="R"
+                       Grid.Row="2"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="60, 15"
+                       Foreground="White"
+                       FontSize="48"
+                       FontWeight="Bold"
+                       FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+                <Label Content="Перезарядка"
+                       Grid.Row="2"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="300, 15, 60, 15"
+                       Foreground="White"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                <Label Content="S"
+                       Grid.Row="3"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="60, 15"
+                       Foreground="White"
+                       FontSize="48"
+                       FontWeight="Bold"
+                       FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+                <Label Content="Пропустить песню"
+                       Grid.Row="3"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="300, 15, 60, 15"
+                       Foreground="White"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+                <Label Content="ESC"
+                       Grid.Row="4"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="60, 15"
+                       Foreground="White"
+                       FontSize="48"
+                       FontWeight="Bold"
+                       FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+                <Label Content="Меню паузы"
+                       Grid.Row="4"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="300, 15, 60, 15"
+                       Foreground="White"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       FontFamily="{Binding FontFamily, ElementName=controlMainMenu}"/>
+
+
+            </Grid>
+
+            <Button Style="{StaticResource ResourceKey=ButtonExit}"
+                    Grid.Row="1"
+                    Height="48"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Click="btnExit_Click"/>
+
+        </Grid>
+
+    </Grid>
+</UserControl>
